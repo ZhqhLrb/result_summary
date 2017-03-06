@@ -57,3 +57,30 @@ h2 {
 .about-me .rank-detail {
   position: absolute;
 }
+.about-me .about-me-content {
+  height: 57.44%;
+  width: 100.66666667%;
+  margin-top: 0.26666667rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-me .about-me-content img {
+  height: 100%;
+  width: 100%;
+}
+.about-me .about-me-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0.28rem;
+  margin-left: -0.16rem;
+}
+.about-me .about-me-dots .dots {
+  display: block;
+  height: 0.16rem;
+  width: 0.16rem;
+  margin: 0.06666667rem auto 0 auto;
+  box-sizing: border-box;
+  background-color: #ffd97e;
+  border: 0.04rem solid #000;
+  border-radius: 100%;
+}
