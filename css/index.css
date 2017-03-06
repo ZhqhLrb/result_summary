@@ -1,0 +1,27 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+.swiper-container {
+  width: 10rem;
+}
+.swiper-container .swiper-slide {
+  background-image: url(../img/bg.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.index {
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/pen.png);
+  background-size: 100% 83%;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.index .index-content {
+  height: 91.2106136%;
+  width: 96.4%;
+  margin-top: 11.85737977%;
+}
