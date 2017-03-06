@@ -1,4 +1,6 @@
-body {
+body,
+h1,
+h2 {
   padding: 0px;
   margin: 0px;
 }
@@ -24,4 +26,34 @@ body {
   height: 91.2106136%;
   width: 96.4%;
   margin-top: 11.85737977%;
+}
+.about-me .about-me-title {
+  height: 1.77333333rem;
+  margin-top: 1.24rem;
+  margin-bottom: 0.66666667rem;
+  text-align: center;
+}
+.about-me .about-me-title img {
+  height: 100%;
+  padding-left: 0.6rem;
+}
+.about-me .rank {
+  height: 1.01333333rem;
+  text-align: center;
+}
+.about-me .rank img {
+  height: 100%;
+}
+.about-me .major-rank {
+  margin-bottom: 0.26666667rem;
+}
+.about-me .major-rank img {
+  width: 6.76rem;
+}
+.about-me .class-rank img {
+  padding-right: 0.53333333rem;
+  width: 6.16rem;
+}
+.about-me .rank-detail {
+  position: absolute;
 }
