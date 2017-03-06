@@ -2,7 +2,7 @@ var mySwiper = new Swiper('.swiper-container', {
     direction: 'vertical',
     loop: false,
     height: window.innerHeight,
-    initialSlide: 1,
+    initialSlide: 2,
     speed: 500,
 });
 
@@ -13,7 +13,9 @@ function judgeWidth () {
     var title = $('.about-me-title');
 
     if (width <= 640) {
-        title.style.marginTop = '.5rem';
+        title[0].style.marginTop = '.5rem';
+        title[1].style.marginTop = '.5rem';
+        title[2].style.marginTop = '.5rem';
     }
     
 }
