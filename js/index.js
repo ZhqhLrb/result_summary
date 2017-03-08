@@ -2,7 +2,7 @@ var mySwiper = new Swiper('.swiper-container', {
     direction: 'vertical',
     loop: false,
     height: window.innerHeight,
-    initialSlide: 2,
+    initialSlide: 4,
     speed: 500,
 });
 
@@ -11,6 +11,7 @@ function judgeWidth () {
     var dpr = window.dpr;
     var width = window.innerWidth;
     var title = $('.about-me-title');
+    var failMajor = $('.fail-major');
 
     if (width <= 640) {
         title[0].style.marginTop = '.5rem';
@@ -18,6 +19,11 @@ function judgeWidth () {
         title[2].style.marginTop = '.5rem';
     }
     
+    for (var i = 1; i < failMajor.length; i++) {
+        if (failMajor[i].innerHTML.length > 4) {
+            failMajor[i].innerHTML = failMajor[i].innerHTML.slice(0, 4) + '…';
+        }
+    }
 }
 
 function $ (ele) {
