@@ -1,5 +1,6 @@
 var mySwiper = new Swiper('.swiper-container', {
     direction: 'vertical',
+    autoHeight: true,
     loop: false,
     height: window.innerHeight,
     initialSlide: 4,
