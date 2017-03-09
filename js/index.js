@@ -4,6 +4,7 @@ var mySwiper = new Swiper('.swiper-container', {
     height: window.innerHeight,
     initialSlide: 4,
     speed: 500,
+    iOSEdgeSwipeDetection : true
 });
 
 
