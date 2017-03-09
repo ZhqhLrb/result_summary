@@ -163,7 +163,7 @@ p {
 }
 .about-me .class-major .class-score {
   font-family: 'fzltth';
-  -webkit-text-stroke: 0.00133333rem #000;
+  -webkit-text-stroke: 0.01333333rem #000;
   color: #ffc45e;
 }
 .about-me .last-class-major {
