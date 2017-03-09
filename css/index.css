@@ -1,6 +1,14 @@
 @font-face {
   font-family: 'DFWaWaSC';
-  src: url('../font/DFWaWaSC.ttf');
+  src: url('../font/DFWaWaSC.eot');
+  src: url('../font/DFWaWaSC.eot?#font-spider') format('embedded-opentype'), url('../font/DFWaWaSC.woff') format('woff'), url('../font/DFWaWaSC.ttf') format('truetype'), url('../font/DFWaWaSC.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fzltth';
+  src: url('fzltth.eot');
+  src: url('../font/fzltth.eot?#font-spider') format('embedded-opentype'), url('../font/fzltth.woff') format('woff'), url('../font/fzltth.ttf') format('truetype'), url('../font/fzltth.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -134,6 +142,8 @@ p {
   position: relative;
   display: inline;
   margin-right: 1.8rem;
+  font-family: 'fzltth';
+  -webkit-text-stroke: 0.02rem #000;
   color: #fff;
 }
 .about-me .class-major .major-name:after {
@@ -152,6 +162,8 @@ p {
   display: inline-block;
 }
 .about-me .class-major .class-score {
+  font-family: 'fzltth';
+  -webkit-text-stroke: 0.00133333rem #000;
   color: #ffc45e;
 }
 .about-me .last-class-major {
@@ -201,9 +213,13 @@ p {
   margin-top: 0.33333333rem;
 }
 .major {
+  font-family: 'fzltth';
+  -webkit-text-stroke: 0.02rem #000;
   color: #ffc45e;
 }
 .number {
+  font-family: 'fzltth';
+  -webkit-text-stroke: 0.01333333rem #000;
   color: #ffc45e;
 }
 .share-header {

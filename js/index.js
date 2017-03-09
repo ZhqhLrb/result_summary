@@ -3,33 +3,33 @@ var mySwiper = new Swiper('.swiper-container', {
     autoHeight: true,
     loop: false,
     height: window.innerHeight,
-    initialSlide: 4,
+    initialSlide: 2,
     speed: 500,
     iOSEdgeSwipeDetection : true,
-    iOSEdgeSwipeThreshold : 30,
+    iOSEdgeSwipeThreshold : 50,
     followFinger: true
 });
 
 
-// function judgeWidth () {
-//     var dpr = window.dpr;
-//     var width = window.innerWidth;
-//     var title = $('.about-me-title');
-//     var failMajor = $('.fail-major');
-//     var major = $('.fail-major');
+function judgeWidth () {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var title = $('.about-me-title');
+    var classMajor = $('.class-major');
+    var schoolAverage = $('.school-average');
 
-//     if (width <= 640) {
-//         title[0].style.marginTop = '.5rem';
-//         title[1].style.marginTop = '.5rem';
-//         title[2].style.marginTop = '.5rem';
-//         for (var i = 0; i < major.length; i++) {
-//             if (major[i].innerHTML.length > 4) {
-//                 major[i].innerHTML = major[i].innerHTML.slice(0, 3) + '…';
-//             }
-//             console.log(major[i].innerHTML);
-//         }
-//     }
-// }
+    if (width <= 320 || height <= 876) {
+        title[0].style.marginTop = '.5rem';
+        title[1].style.marginTop = '.5rem';
+        title[1].style.marginBottom = '.5rem';
+        title[2].style.marginTop = '.5rem';
+        for (var i = 0; i < classMajor.length; i++) {
+            classMajor[i].style.marginBottom = '0';
+        }
+        schoolAverage[0].style.marginBottom = '0.3rem';
+        schoolAverage[1].style.marginBottom = '0.3rem';
+    }
+}
 
 function $ (ele) {
     if (document.querySelectorAll(ele).length === 1) {
@@ -39,4 +39,4 @@ function $ (ele) {
     }
 }
 
-// judgeWidth();
+judgeWidth();
