@@ -291,8 +291,8 @@ p {
 }
 .about-me .pk-btn {
   position: absolute;
-  width: 100%;
   bottom: 1.14666667rem;
+  width: 100%;
 }
 .about-me .pk-btn .pk-share {
   display: block;
@@ -399,13 +399,10 @@ p {
   margin: 0 auto;
   border: none;
   outline: none;
+  background-image: url(../img/pkbtn.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0);
-}
-.share-btns .pk-btn {
-  margin-bottom: 0.52rem;
-  background-image: url(../img/pkbtn.png);
 }
 .result-score {
   position: absolute;
