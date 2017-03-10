@@ -13,7 +13,7 @@ var mySwiper = new Swiper('.swiper-container', {
 
 function judgeWidth () {
     var width = window.innerWidth;
-    var height = window.innerHight;
+    var height = window.innerHeight;
     var title = $('.about-me-title');
     var personalMajor = $('.personal-major');
     var classMajor = $('.class-major');
