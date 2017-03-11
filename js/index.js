@@ -84,18 +84,45 @@ function judgeWidth () {
 
 function judgePage () {
     if (window.location.search) {
-        var mySwiper = new Swiper('.swiper-container', {
-            direction: 'vertical',
-            autoHeight: true,
-            loop: false,
-            height: window.innerHeight,
-            initialSlide: 5,
-            speed: 500,
-            iOSEdgeSwipeDetection : true,
-            iOSEdgeSwipeThreshold : 50,
-            followFinger: true
-        })
+        mySwiper.removeSlide([0, 1, 2, 3, 4]);
     }
+}
+
+function pk () {
+    var btn = $('.btn');
+    btn.addEventListener('click', function () {
+        ajax({
+            type: 'get',
+            url: '',
+            success: function () {
+                var opponentId = $('.opponent-id');
+                var pkResult = $('.pk-container');
+
+                if (true) {
+                    mySwiper.removeSlide(5);
+                } else {
+                    // pk的学号
+                    opponentId.innerHTML = '';
+
+                    // pk的科目，自己的成绩和别人的成绩
+                    pkResult.innerHTML = `
+                        <div class="pk-result">
+                            <div class="pk-name">` +  + `</div>
+                            <div class="pk-item">
+                                <div class="pk-result-bar my-score-bar">
+                                    <div class="result-score my-score">` +  + `</div>
+                                </div>
+                                <div class="pk-result-bar opponent-score-bar">
+                                    <div class="result-score opponent-score">` +  + `</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+            }
+        })
+    })
 }
 
 function $ (ele) {
@@ -152,5 +179,7 @@ function ajax (obj) {
 }
 
 
+
 judgeWidth();
 judgePage();
+// pk();
