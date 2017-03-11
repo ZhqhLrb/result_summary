@@ -3,7 +3,7 @@ var mySwiper = new Swiper('.swiper-container', {
     autoHeight: true,
     loop: false,
     height: window.innerHeight,
-    initialSlide: 5,
+    initialSlide: 0,
     speed: 500,
     iOSEdgeSwipeDetection : true,
     iOSEdgeSwipeThreshold : 50,
@@ -19,6 +19,7 @@ function judgeWidth () {
     var classMajor = $('.class-major');
     var schoolAverage = $('.school-average');
     var majorHandle = $('.major-handle');
+    var major = $('.major');
     var scoreBar = $('.pk-result-bar');
     var scores = $('.result-score');
     var pkItem = $('.pk-result');
@@ -54,6 +55,12 @@ function judgeWidth () {
         }
     }
 
+    for (var i = 0; i < major.length; i++) {
+        if (major[i].innerHTML.length > 4) {
+            major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
+        }
+    }
+
     for (var i = 0; i < majorHandle.length; i++) {
         if (majorHandle[i].innerHTML.length > 4) {
             if (i <= 1) {
@@ -72,6 +79,22 @@ function judgeWidth () {
         if (pkName[i].innerHTML.length > 3) {
             pkName[i].innerHTML = pkName[i].innerHTML.slice(0, 3) + '…';
         }
+    }
+}
+
+function judgePage () {
+    if (window.location.search) {
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            autoHeight: true,
+            loop: false,
+            height: window.innerHeight,
+            initialSlide: 5,
+            speed: 500,
+            iOSEdgeSwipeDetection : true,
+            iOSEdgeSwipeThreshold : 50,
+            followFinger: true
+        })
     }
 }
 
@@ -130,3 +153,4 @@ function ajax (obj) {
 
 
 judgeWidth();
+judgePage();
