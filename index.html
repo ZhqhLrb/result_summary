@@ -82,10 +82,10 @@
                     </div>
                     <div class="school-average-major">
                         <div class="school-major-best school-major">
-                            最多<span class="major major-handle">英语</span>比例<span class="number">20</span>%
+                            最多<span class="major">英语</span>比例<span class="number">20</span>%
                         </div>
                         <div class="school-major-worst school-major">
-                            最少<span class="major major-handle">网页设计设计</span>比例<span class="number">20</span>%
+                            最少<span class="major">网页设计设计</span>比例<span class="number">20</span>%
                         </div>
                     </div>
                 </div>
@@ -129,14 +129,16 @@
                     <div class="pk-mark opponent"></div>
                     <span class="opponent-id">2015210765</span>
                 </div>
-                <div class="pk-result">
-                    <div class="pk-name">英语英语</div>
-                    <div class="pk-item">
-                        <div class="pk-result-bar my-score-bar">
-                            <div class="result-score my-score">100</div>
-                        </div>
-                        <div class="pk-result-bar opponent-score-bar">
-                            <div class="result-score opponent-score">56</div>
+                <div class="pk-container">
+                    <div class="pk-result">
+                        <div class="pk-name">英语英语</div>
+                        <div class="pk-item">
+                            <div class="pk-result-bar my-score-bar">
+                                <div class="result-score my-score">100</div>
+                            </div>
+                            <div class="pk-result-bar opponent-score-bar">
+                                <div class="result-score opponent-score">56</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -155,10 +157,10 @@
     WXSHARE.config({debug: false});
     WXSHARE.ready(function() {
         var option = {
-              title: "学习雷锋|原创“励志小雷锋”表情包上线了！太萌、太有爱，赶紧下载吧",
+              title: "分享你的pk结果",
               link: "http://hongyan.cqupt.edu.cn/leifeng/index.html",
-              imgUrl: 'http://hongyan.cqupt.edu.cn/leifeng/image/jinli.png',
-              desc: '雷锋表情包欢迎下载！',
+              imgUrl: '',
+              desc: '',
               type: '',
               success: function() {
                   console.log('分享成功');
@@ -174,7 +176,7 @@
             wx.onMenuShareQQ(option);
             wx.onMenuShareWeibo(option);
             wx.onMenuShareQZone(option);
-            console.log(window.location.href);
+            console.log(window.location);
         });
     });
 

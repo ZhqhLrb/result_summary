@@ -3,7 +3,7 @@ var mySwiper = new Swiper('.swiper-container', {
     autoHeight: true,
     loop: false,
     height: window.innerHeight,
-    initialSlide: 5,
+    initialSlide: 0,
     speed: 500,
     iOSEdgeSwipeDetection : true,
     iOSEdgeSwipeThreshold : 50,
@@ -19,6 +19,7 @@ function judgeWidth () {
     var classMajor = $('.class-major');
     var schoolAverage = $('.school-average');
     var majorHandle = $('.major-handle');
+    var major = $('.major');
     var scoreBar = $('.pk-result-bar');
     var scores = $('.result-score');
     var pkItem = $('.pk-result');
@@ -54,6 +55,12 @@ function judgeWidth () {
         }
     }
 
+    for (var i = 0; i < major.length; i++) {
+        if (major[i].innerHTML.length > 4) {
+            major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
+        }
+    }
+
     for (var i = 0; i < majorHandle.length; i++) {
         if (majorHandle[i].innerHTML.length > 4) {
             if (i <= 1) {
@@ -73,6 +80,49 @@ function judgeWidth () {
             pkName[i].innerHTML = pkName[i].innerHTML.slice(0, 3) + '…';
         }
     }
+}
+
+function judgePage () {
+    if (window.location.search) {
+        mySwiper.removeSlide([0, 1, 2, 3, 4]);
+    }
+}
+
+function pk () {
+    var btn = $('.btn');
+    btn.addEventListener('click', function () {
+        ajax({
+            type: 'get',
+            url: '',
+            success: function () {
+                var opponentId = $('.opponent-id');
+                var pkResult = $('.pk-container');
+
+                if (true) {
+                    mySwiper.removeSlide(5);
+                } else {
+                    // pk的学号
+                    opponentId.innerHTML = '';
+
+                    // pk的科目，自己的成绩和别人的成绩
+                    pkResult.innerHTML = `
+                        <div class="pk-result">
+                            <div class="pk-name">` +  + `</div>
+                            <div class="pk-item">
+                                <div class="pk-result-bar my-score-bar">
+                                    <div class="result-score my-score">` +  + `</div>
+                                </div>
+                                <div class="pk-result-bar opponent-score-bar">
+                                    <div class="result-score opponent-score">` +  + `</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+            }
+        })
+    })
 }
 
 function $ (ele) {
@@ -129,4 +179,7 @@ function ajax (obj) {
 }
 
 
+
 judgeWidth();
+judgePage();
+// pk();
