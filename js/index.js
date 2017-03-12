@@ -117,22 +117,17 @@ function judgeWidth () {
     }
 }
 
-function judgePage () {
-    if (window.location.search) {
-        mySwiper.removeSlide([0, 1, 2, 3, 4]);
-    }
-}
-
 function pk () {
     var btn = $('.btn');
     var searchNum = $('.search-box');
     var pkResultPage = $('.swiper-slide')[5];
+    var myStunum = document.head.stunum;
     btn.addEventListener('click', function () {
         ajax({
             type: 'post',
             url: 'http://hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/ScoreData/ScoreData/search',
             data: {
-                'me_stunum': data.me_stunum,
+                'me_stunum': myStunum,
                 'other_stunum': parseInt(searchNum.value)
             },
             success: function (res) {
