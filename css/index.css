@@ -105,8 +105,8 @@ p {
   text-align: center;
 }
 .about-me .about-me-content img {
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
 }
 .about-me .school-info-content {
   height: 51.44%;
@@ -311,6 +311,10 @@ p {
   background-image: url(../img/sharebtn.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+.about-me .class-img img {
+  height: 80%;
+  width: 80%;
 }
 .pk {
   position: relative;
