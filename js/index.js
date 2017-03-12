@@ -46,19 +46,19 @@ function judgeWidth () {
             
             for (var i = 0; i < personalMajor.length; i++) {
                 if (personalMajor[i].innerHTML.length > 10) {
-                   personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 12) + '…';
+                   personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 12) + '..';
                 }
             }
 
             for (var i = 0; i < classSub.length; i++) {
                 if (classSub[i].innerHTML.length > 5) {
-                   classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '…';
+                   classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '..';
                 }
             }
 
             for (var i = 0; i < major.length; i++) {
                 if (major[i].innerHTML.length > 4) {
-                   major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
+                   major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '..';
                 }
             }
 
@@ -71,44 +71,39 @@ function judgeWidth () {
         } else {
             for (var i = 0; i < personalMajor.length; i++) {
                 if (personalMajor[i].innerHTML.length > 4) {
-                   personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 4) + '…';
+                   personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 4) + '..';
                 }
             }
 
             for (var i = 0; i < classSub.length; i++) {
                 if (classSub[i].innerHTML.length > 5) {
-                   classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '…';
+                   classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '..';
                 }
             }
 
             for (var i = 0; i < major.length; i++) {
                 if (major[i].innerHTML.length > 4) {
-                   major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
+                   major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '..';
                 }
             }
         }
     } else {
         for (var i = 0; i < personalMajor.length; i++) {
             if (personalMajor[i].innerHTML.length > 4) {
-               personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 4) + '…';
+               personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 4) + '..';
             }
         }
 
         for (var i = 0; i < classSub.length; i++) {
             if (classSub[i].innerHTML.length > 5) {
-               classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '…';
+               classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '..';
             }
         }
 
         for (var i = 0; i < major.length; i++) {
             if (major[i].innerHTML.length > 4) {
-               major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
+               major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '..';
             }
-        }
-    }
-    for (var i = 0; i < pkName.length; i++) {
-        if (pkName[i].innerHTML.length > 5) {
-           pkName[i].innerHTML = pkName[i].innerHTML.slice(0, 5) + '…';
         }
     }
     for (var i = 0; i < number.length; i++) {
@@ -132,13 +127,13 @@ function pk () {
             success: function (res) {
                 var opponentId = $('.opponent-id');
                 var pkResult = $('.pk-container');
-                var flag = res.data.length;
-                if (flag > 6) {
-                    flag = 6;
-                } else {
-                    flag = res.data.length
-                }
                 if (res.status == 200) {
+                    var flag = res.data.length;
+                    if (flag > 6) {
+                        flag = 6;
+                    } else {
+                        flag = res.data.length
+                    }
                     $('.warn-info').style.display = 'none';
                     pkResultPage.style.display = 'block';
                     mySwiper.appendSlide(pkResultPage);
@@ -166,6 +161,11 @@ function pk () {
 
                     for (var i = 0; i < scoreBar.length; i++) {
                         scoreBar[i].style.width = 152 / 60 * parseInt(scores[i].innerHTML) / 75 * 1.8 + 'rem';
+                    }
+                    for (var i = 0; i < pkName.length; i++) {
+                        if (pkName[i].innerHTML.length > 5) {
+                           pkName[i].innerHTML = pkName[i].innerHTML.slice(0, 5) + '…';
+                        }
                     }
                     mySwiper.slideNext();
                 } else {
@@ -237,4 +237,3 @@ function ajax (obj) {
 
 judgeWidth();
 pk();
-init();

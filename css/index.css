@@ -150,6 +150,7 @@ p {
   font-weight: bold;
   line-height: 1;
   text-align: center;
+  letter-spacing: -0.04rem;
 }
 .about-me .class-major img {
   height: 0.4rem;
