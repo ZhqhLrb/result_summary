@@ -139,6 +139,7 @@
                 <div class="share-btns">
                     <div class="btn"></div>
                 </div>
+                <div class="warn-info" style="display: none;">请输入同学院的学号或正确的学号！！</div>
             </div>
             <div class="swiper-slide about-me pk" style="display: block;">
                 <h2 class="about-me-title pk-info">
@@ -232,6 +233,7 @@
 <script>
     WXSHARE.config({debug: false});
     WXSHARE.ready(function() {
+
         var option = {
               title: "分享你的pk结果",
               link: window.location,
@@ -255,6 +257,5 @@
             console.log(window.location.href);
         });
     });
-
 </script>
 </html>

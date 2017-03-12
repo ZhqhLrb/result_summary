@@ -58,8 +58,8 @@ function judgeWidth () {
             }
 
             for (var i = 0; i < major.length; i++) {
-                if (major[i].innerHTML.length > 5) {
-                   major[i].innerHTML = major[i].innerHTML.slice(0, 5) + '…';
+                if (major[i].innerHTML.length > 4) {
+                   major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
                 }
             }
 
@@ -77,14 +77,14 @@ function judgeWidth () {
             }
 
             for (var i = 0; i < classSub.length; i++) {
-                if (classSub[i].innerHTML.length > 7) {
-                   classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 7) + '…';
+                if (classSub[i].innerHTML.length > 5) {
+                   classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '…';
                 }
             }
 
             for (var i = 0; i < major.length; i++) {
-                if (major[i].innerHTML.length > 5) {
-                   major[i].innerHTML = major[i].innerHTML.slice(0, 5) + '…';
+                if (major[i].innerHTML.length > 4) {
+                   major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
                 }
             }
         }
@@ -96,14 +96,14 @@ function judgeWidth () {
         }
 
         for (var i = 0; i < classSub.length; i++) {
-            if (classSub[i].innerHTML.length > 7) {
-               classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 7) + '…';
+            if (classSub[i].innerHTML.length > 5) {
+               classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '…';
             }
         }
 
         for (var i = 0; i < major.length; i++) {
-            if (major[i].innerHTML.length > 5) {
-               major[i].innerHTML = major[i].innerHTML.slice(0, 5) + '…';
+            if (major[i].innerHTML.length > 4) {
+               major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
             }
         }
     }
@@ -133,8 +133,8 @@ function pk () {
             success: function (res) {
                 var opponentId = $('.opponent-id');
                 var pkResult = $('.pk-container');
-
-                if (!res.data[0].subject) {
+                if (res.status == 200) {
+                    $('.warn-info').style.display = 'none';
                     pkResultPage.style.display = 'block';
                     mySwiper.appendSlide(pkResultPage);
                     opponentId.innerHTML = 'parseInt(searchNum.value)';
@@ -159,6 +159,7 @@ function pk () {
                         pkResultPage.style.display = 'none';
                         mySwiper.removeSlide([5]);
                     }
+                    $('.warn-info').style.display = 'block';
                 }
             }
         })
