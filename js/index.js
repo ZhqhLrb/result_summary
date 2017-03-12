@@ -116,7 +116,7 @@ function pk () {
     var btn = $('.btn');
     var searchNum = $('.search-box');
     var pkResultPage = $('.swiper-slide')[5];
-    var myStunum = document.head.stunum;
+    var myStunum = document.head.getAttribute('data-stunum');
     btn.addEventListener('click', function () {
         ajax({
             type: 'post',
@@ -132,7 +132,7 @@ function pk () {
                     $('.warn-info').style.display = 'none';
                     pkResultPage.style.display = 'block';
                     mySwiper.appendSlide(pkResultPage);
-                    opponentId.innerHTML = 'parseInt(searchNum.value)';
+                    opponentId.innerHTML = parseInt(searchNum.value);
                     pkResult.innerHTML = '';
                     for (var i = 0; i < 6; i++) {
                         pkResult.innerHTML += `
