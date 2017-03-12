@@ -132,7 +132,7 @@ function pk () {
             type: 'post',
             url: 'http://hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/ScoreData/ScoreData/search',
             data: {
-                'me_stunum': 123,
+                'me_stunum': data.me_stunum,
                 'other_stunum': parseInt(searchNum.value)
             },
             success: function (res) {
