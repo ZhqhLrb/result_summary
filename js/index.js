@@ -3,13 +3,15 @@ var mySwiper = new Swiper('.swiper-container', {
     autoHeight: true,
     loop: false,
     height: window.innerHeight,
-    initialSlide: 0,
+    initialSlide: 1,
     speed: 500,
     iOSEdgeSwipeDetection : true,
     iOSEdgeSwipeThreshold : 50,
     followFinger: true
 });
 
+var u = navigator.userAgent;
+var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 
 function judgeWidth () {
     var width = window.innerWidth;
@@ -18,67 +20,100 @@ function judgeWidth () {
     var personalMajor = $('.personal-major');
     var classMajor = $('.class-major');
     var schoolAverage = $('.school-average');
-    var majorHandle = $('.major-handle');
     var major = $('.major');
+    var classSub = $('.major-name');
     var scoreBar = $('.pk-result-bar');
     var scores = $('.result-score');
     var pkItem = $('.pk-result');
     var pkName = $('.pk-name');
-
-    if (width <= 320 || height <= 876) {
-        title[0].style.marginTop = '.5rem';
-        title[0].style.marginBottom = '.5rem';
-        title[1].style.marginTop = '.5rem';
-        title[1].style.marginBottom = '.5rem';
-        title[2].style.marginTop = '.5rem';
-        title[3].style.marginBottom = '.3rem';
-        $('.rank')[0].style.marginBottom = '0';
-        $('.rank')[1].style.marginBottom = '0';
-        
-        for (var i = 0; i < classMajor.length; i++) {
-            classMajor[i].style.marginBottom = '0';
-        }
-
-        schoolAverage[0].style.marginBottom = '0.3rem';
-        schoolAverage[1].style.marginBottom = '0.3rem';
-        
-        for (var i = 0; i < majorHandle.length; i++) {
-            if (majorHandle[i].innerHTML.length > 4) {
-                   majorHandle[i].innerHTML = majorHandle[i].innerHTML.slice(0, 3) + '…';
-            }
-        }
-
-        $('.score-indroduce').style.marginBottom = '.25rem';
-        
-        for (var i = 0; i < pkItem.length; i++) {
-            pkItem[i].style.marginBottom = '.1rem';
-        }
-    }
-
-    for (var i = 0; i < major.length; i++) {
-        if (major[i].innerHTML.length > 4) {
-            major[i].innerHTML = major[i].innerHTML.slice(0, 4) + '…';
-        }
-    }
-
-    for (var i = 0; i < majorHandle.length; i++) {
-        if (majorHandle[i].innerHTML.length > 4) {
-            if (i <= 1) {
-                majorHandle[i].innerHTML = majorHandle[i].innerHTML.slice(0, 3) + '…';
-            } else {
-                majorHandle[i].innerHTML = majorHandle[i].innerHTML.slice(0, 4) + '…';
-            }
-        }
-    }
     
-    for (var i = 0; i < scoreBar.length; i++) {
-        scoreBar[i].style.width = (parseInt(scores[i].innerHTML) / 100 * 506 / 75) + 'rem';
-    }
+    if (isiOS) {
+        if (width <= 320 || height <= 876) {
+            title[0].style.marginTop = '.5rem';
+            title[0].style.marginBottom = '.5rem';
+            title[1].style.marginTop = '.5rem';
+            title[1].style.marginBottom = '.5rem';
+            title[2].style.marginTop = '.5rem';
+            title[3].style.marginBottom = '.3rem';
+            $('.rank')[0].style.marginBottom = '0';
+            $('.rank')[1].style.marginBottom = '0';
+            
+            for (var i = 0; i < classMajor.length; i++) {
+                classMajor[i].style.marginBottom = '0';
+            }
 
-    for (var i = 0; i < pkName.length; i++) {
-        if (pkName[i].innerHTML.length > 3) {
-            pkName[i].innerHTML = pkName[i].innerHTML.slice(0, 3) + '…';
+            schoolAverage[0].style.marginBottom = '0.3rem';
+            schoolAverage[1].style.marginBottom = '0.3rem';
+            
+            for (var i = 0; i < personalMajor.length; i++) {
+                if (personalMajor[i].innerHTML.length > 10) {
+                   personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 12) + '…';
+                }
+            }
+
+            for (var i = 0; i < classSub.length; i++) {
+                if (classSub[i].innerHTML.length > 5) {
+                   classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 5) + '…';
+                }
+            }
+
+            for (var i = 0; i < major.length; i++) {
+                if (major[i].innerHTML.length > 5) {
+                   major[i].innerHTML = major[i].innerHTML.slice(0, 5) + '…';
+                }
+            }
+
+
+            $('.score-indroduce').style.marginBottom = '.25rem';
+            
+            for (var i = 0; i < pkItem.length; i++) {
+                pkItem[i].style.marginBottom = '.1rem';
+            }
+        } else {
+            for (var i = 0; i < personalMajor.length; i++) {
+                if (personalMajor[i].innerHTML.length > 4) {
+                   personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 4) + '…';
+                }
+            }
+
+            for (var i = 0; i < classSub.length; i++) {
+                if (classSub[i].innerHTML.length > 7) {
+                   classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 7) + '…';
+                }
+            }
+
+            for (var i = 0; i < major.length; i++) {
+                if (major[i].innerHTML.length > 5) {
+                   major[i].innerHTML = major[i].innerHTML.slice(0, 5) + '…';
+                }
+            }
         }
+    } else {
+        for (var i = 0; i < personalMajor.length; i++) {
+            if (personalMajor[i].innerHTML.length > 4) {
+               personalMajor[i].innerHTML = personalMajor[i].innerHTML.slice(0, 4) + '…';
+            }
+        }
+
+        for (var i = 0; i < classSub.length; i++) {
+            if (classSub[i].innerHTML.length > 7) {
+               classSub[i].innerHTML = classSub[i].innerHTML.slice(0, 7) + '…';
+            }
+        }
+
+        for (var i = 0; i < major.length; i++) {
+            if (major[i].innerHTML.length > 5) {
+               major[i].innerHTML = major[i].innerHTML.slice(0, 5) + '…';
+            }
+        }
+    }
+    for (var i = 0; i < pkName.length; i++) {
+        if (pkName[i].innerHTML.length > 5) {
+           pkName[i].innerHTML = pkName[i].innerHTML.slice(0, 5) + '…';
+        }
+    }
+    for (var i = 0; i < scoreBar.length; i++) {
+        scoreBar[i].style.width = 152 / 60 * parseInt(scores[i].innerHTML) / 75 * 1.8 + 'rem';
     }
 }
 
@@ -90,36 +125,46 @@ function judgePage () {
 
 function pk () {
     var btn = $('.btn');
+    var searchNum = $('.search-box');
+    var pkResultPage = $('.swiper-slide')[5];
     btn.addEventListener('click', function () {
         ajax({
-            type: 'get',
-            url: '',
-            success: function () {
+            type: 'post',
+            url: 'http://hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/ScoreData/ScoreData/search',
+            data: {
+                'me_stunum': 123,
+                'other_stunum': parseInt(searchNum.value)
+            },
+            success: function (res) {
                 var opponentId = $('.opponent-id');
                 var pkResult = $('.pk-container');
 
-                if (true) {
-                    mySwiper.removeSlide(5);
-                } else {
-                    // pk的学号
-                    opponentId.innerHTML = '';
-
-                    // pk的科目，自己的成绩和别人的成绩
-                    pkResult.innerHTML = `
-                        <div class="pk-result">
-                            <div class="pk-name">` +  + `</div>
-                            <div class="pk-item">
-                                <div class="pk-result-bar my-score-bar">
-                                    <div class="result-score my-score">` +  + `</div>
-                                </div>
-                                <div class="pk-result-bar opponent-score-bar">
-                                    <div class="result-score opponent-score">` +  + `</div>
+                if (!res.data[0].subject) {
+                    pkResultPage.style.display = 'block';
+                    mySwiper.appendSlide(pkResultPage);
+                    opponentId.innerHTML = 'parseInt(searchNum.value)';
+                    pkResult.innerHTML = '';
+                    for (var i = 0; i < 6; i++) {
+                        pkResult.innerHTML += `
+                            <div class="pk-result">
+                                <div class="pk-name">` + res.data[i].subject + `</div>
+                                <div class="pk-item">
+                                    <div class="pk-result-bar my-score-bar">
+                                        <div class="result-score my-score">` + res.data[i]['me_score'] + `</div>
+                                    </div>
+                                    <div class="pk-result-bar opponent-score-bar">
+                                        <div class="result-score opponent-score">` + res.data[i]['other_score'] + `</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `;
+                        `;
+                    }
+                } else {
+                    if (pkResultPage.style.display == 'block') {
+                        pkResultPage.style.display = 'none';
+                        mySwiper.removeSlide([5]);
+                    }
                 }
-
             }
         })
     })
@@ -179,7 +224,6 @@ function ajax (obj) {
 }
 
 
-
 judgeWidth();
 judgePage();
-// pk();
+pk();

@@ -72,22 +72,25 @@ p {
   width: 0.77333333rem;
 }
 .about-me .rank .bw-header {
-  height: 0.57333333rem;
-  width: 2.82666667rem;
+  height: 0.53333333rem;
+  width: 2.53333333rem;
+  vertical-align: middle;
 }
 .about-me .rank .bw-mingci {
-  height: 0.53333333rem;
-  width: 1.17333333rem;
-  margin-left: 0.13333333rem;
+  height: 0.50666667rem;
+  width: 1.09333333rem;
+  vertical-align: middle;
 }
 .about-me .rank .bw-footer {
-  height: 0.52rem;
-  width: 0.61333333rem;
+  height: 0.48rem;
+  width: 0.57333333rem;
+  vertical-align: middle;
 }
 .about-me .rank .personal-major {
   font-family: 'fzltth';
   -webkit-text-stroke: 0.03333333rem #000;
   letter-spacing: -0.01333333rem;
+  vertical-align: middle;
   color: #ffc45e;
 }
 .about-me .major-rank {
@@ -152,7 +155,7 @@ p {
 .about-me .class-major .major-name {
   position: relative;
   display: inline;
-  margin-right: 1.8rem;
+  margin-right: 1.53333333rem;
   font-family: 'fzltth';
   -webkit-text-stroke: 0.02rem #000;
   color: #fff;
@@ -162,8 +165,8 @@ p {
   display: inline-block;
   position: absolute;
   top: 50%;
-  right: -1.45333333rem;
-  height: 2px;
+  right: -1.32rem;
+  height: 0.04rem;
   width: 1.18666667rem;
   margin-top: -0.02666667rem;
   background-color: #000;
@@ -253,7 +256,7 @@ p {
 .about-me .pk-result .pk-name {
   float: left;
   height: 100%;
-  width: 1.13333333rem;
+  width: 1.73333333rem;
   margin-left: 0.66666667rem;
   margin-right: 0.4rem;
   text-align: center;
@@ -415,40 +418,40 @@ p {
   font-family: 'Microsoft Yahei';
 }
 [data-dpr="1"] .personal-major {
-  font-size: 26px;
-}
-[data-dpr="2"] .personal-major {
-  font-size: 52px;
-}
-[data-dpr="3"] .personal-major {
-  font-size: 78px;
-}
-[data-dpr="1"] .class-score {
   font-size: 22px;
 }
-[data-dpr="2"] .class-score {
-  font-size: 44px;
+[data-dpr="2"] .personal-major {
+  font-size: 46px;
 }
-[data-dpr="3"] .class-score {
+[data-dpr="3"] .personal-major {
   font-size: 66px;
 }
-[data-dpr="1"] .class-major {
+[data-dpr="1"] .class-score {
   font-size: 18px;
 }
-[data-dpr="2"] .class-major {
+[data-dpr="2"] .class-score {
   font-size: 36px;
 }
-[data-dpr="3"] .class-major {
+[data-dpr="3"] .class-score {
   font-size: 54px;
 }
+[data-dpr="1"] .class-major {
+  font-size: 16px;
+}
+[data-dpr="2"] .class-major {
+  font-size: 32px;
+}
+[data-dpr="3"] .class-major {
+  font-size: 48px;
+}
 [data-dpr="1"] .major-name {
-  font-size: 20px;
+  font-size: 16px;
 }
 [data-dpr="2"] .major-name {
-  font-size: 34px;
+  font-size: 30px;
 }
 [data-dpr="3"] .major-name {
-  font-size: 50px;
+  font-size: 48px;
 }
 [data-dpr="1"] .school-average-sort {
   font-size: 22px;
