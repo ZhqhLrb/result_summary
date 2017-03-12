@@ -23,7 +23,6 @@ function judgeWidth () {
     var major = $('.major');
     var classSub = $('.major-name');
     var pkItem = $('.pk-result');
-    var pkName = $('.pk-name');
     var number = $('.number');
     
     if (isiOS) {
@@ -158,6 +157,7 @@ function pk () {
 
                     var scoreBar = $('.pk-result-bar');
                     var scores = $('.result-score');
+                    var pkName = $('.pk-name');
 
                     for (var i = 0; i < scoreBar.length; i++) {
                         scoreBar[i].style.width = 152 / 60 * parseInt(scores[i].innerHTML) / 75 * 1.8 + 'rem';
