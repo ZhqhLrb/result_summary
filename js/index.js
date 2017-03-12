@@ -165,6 +165,12 @@ function pk () {
     })
 }
 
+function init () {
+    if (window.location.search) {
+        mySwiper.removeSlide([0, 1, 2, 3, 4]);
+    }
+}
+
 function $ (ele) {
     if (document.querySelectorAll(ele).length === 1) {
         return document.querySelector(ele);
@@ -220,5 +226,5 @@ function ajax (obj) {
 
 
 judgeWidth();
-judgePage();
 pk();
+init();
