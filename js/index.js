@@ -24,6 +24,7 @@ function judgeWidth () {
     var classSub = $('.major-name');
     var pkItem = $('.pk-result');
     var pkName = $('.pk-name');
+    var number = $('.number');
     
     if (isiOS) {
         if (width <= 320 || height <= 876) {
@@ -110,6 +111,9 @@ function judgeWidth () {
            pkName[i].innerHTML = pkName[i].innerHTML.slice(0, 5) + '…';
         }
     }
+    for (var i = 0; i < number.length; i++) {
+        number[i].innerHTML = parseFloat(number[i].innerHTML);
+    }
 }
 
 function pk () {
@@ -128,13 +132,20 @@ function pk () {
             success: function (res) {
                 var opponentId = $('.opponent-id');
                 var pkResult = $('.pk-container');
+                var flag = res.data.length;
+                if (flag > 6) {
+                    flag = 6;
+                } else {
+                    flag = res.data.length
+                }
                 if (res.status == 200) {
                     $('.warn-info').style.display = 'none';
                     pkResultPage.style.display = 'block';
                     mySwiper.appendSlide(pkResultPage);
                     opponentId.innerHTML = parseInt(searchNum.value);
                     pkResult.innerHTML = '';
-                    for (var i = 0; i < 6; i++) {
+
+                    for (var i = 0; i < flag; i++) {
                         pkResult.innerHTML += `
                             <div class="pk-result">
                                 <div class="pk-name">` + res.data[i].subject + `</div>
