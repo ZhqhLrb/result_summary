@@ -3,7 +3,7 @@ var mySwiper = new Swiper('.swiper-container', {
     autoHeight: true,
     loop: false,
     height: window.innerHeight,
-    initialSlide: 1,
+    initialSlide: 0,
     speed: 500,
     iOSEdgeSwipeDetection : true,
     iOSEdgeSwipeThreshold : 50,
