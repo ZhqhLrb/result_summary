@@ -22,8 +22,6 @@ function judgeWidth () {
     var schoolAverage = $('.school-average');
     var major = $('.major');
     var classSub = $('.major-name');
-    var scoreBar = $('.pk-result-bar');
-    var scores = $('.result-score');
     var pkItem = $('.pk-result');
     var pkName = $('.pk-name');
     
@@ -112,9 +110,6 @@ function judgeWidth () {
            pkName[i].innerHTML = pkName[i].innerHTML.slice(0, 5) + '…';
         }
     }
-    for (var i = 0; i < scoreBar.length; i++) {
-        scoreBar[i].style.width = 152 / 60 * parseInt(scores[i].innerHTML) / 75 * 1.8 + 'rem';
-    }
 }
 
 function pk () {
@@ -154,6 +149,14 @@ function pk () {
                             </div>
                         `;
                     }
+
+                    var scoreBar = $('.pk-result-bar');
+                    var scores = $('.result-score');
+
+                    for (var i = 0; i < scoreBar.length; i++) {
+                        scoreBar[i].style.width = 152 / 60 * parseInt(scores[i].innerHTML) / 75 * 1.8 + 'rem';
+                    }
+                    mySwiper.slideNext();
                 } else {
                     if (pkResultPage.style.display == 'block') {
                         pkResultPage.style.display = 'none';
@@ -166,11 +169,6 @@ function pk () {
     })
 }
 
-function init () {
-    if (window.location.search) {
-        mySwiper.removeSlide([0, 1, 2, 3, 4]);
-    }
-}
 
 function $ (ele) {
     if (document.querySelectorAll(ele).length === 1) {
