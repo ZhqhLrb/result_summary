@@ -159,21 +159,13 @@ p {
 .about-me .class-major .major-name {
   position: relative;
   display: inline;
-  margin-right: 1.53333333rem;
   font-family: 'fzltth';
   -webkit-text-stroke: 0.02rem #000;
   color: #fff;
 }
-.about-me .class-major .major-name:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  right: -1.32rem;
-  height: 0.04rem;
-  width: 1.18666667rem;
-  margin-top: -0.02666667rem;
-  background-color: #000;
+.about-me .class-major .bars {
+  margin-left: 0.26666667rem;
+  margin-right: 0.26666667rem;
 }
 .about-me .class-major .average-score,
 .about-me .class-major .best-score {
@@ -383,8 +375,8 @@ p {
   background-color: rgba(255, 255, 255, 0);
 }
 .share-search .share-tip {
-  padding-left: 1.06666667rem;
   font-family: 'DFWaWaSC';
+  text-align: center;
   color: #3090e2;
 }
 .share-search .hand {
