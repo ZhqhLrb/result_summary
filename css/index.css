@@ -413,6 +413,7 @@ p {
 }
 .result-score {
   position: absolute;
+  display: none;
   top: 0;
   right: -0.73333333rem;
   height: 0.56rem;
