@@ -31,10 +31,6 @@ p {
 .index {
   height: 100%;
   width: 100%;
-  background-image: url(../img/pen.png);
-  background-size: 100% 83%;
-  background-position: center 25%;
-  background-repeat: no-repeat;
   text-align: center;
 }
 .index .index-content {
@@ -434,6 +430,14 @@ p {
   text-align: center;
   font-family: 'Microsoft Yahei';
 }
+.tip-info {
+  position: absolute;
+  bottom: 0.8rem;
+  width: 100%;
+  font-family: 'Microsoft YaHei';
+  text-align: center;
+  color: #4e8ed4;
+}
 [data-dpr="1"] .personal-major {
   font-size: 22px;
 }
@@ -567,5 +571,14 @@ p {
   font-size: 28px;
 }
 [data-dpr="3"] .result-score {
+  font-size: 42px;
+}
+[data-dpr="1"] .tip-info {
+  font-size: 14px;
+}
+[data-dpr="2"] .tip-info {
+  font-size: 28px;
+}
+[data-dpr="3"] .tip-info {
   font-size: 42px;
 }
